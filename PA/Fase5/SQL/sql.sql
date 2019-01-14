@@ -1,0 +1,2 @@
+update PROCESS_MESSAGES set message='Não tem permissões para efectuar este tipo de operação sobre a Conta. Deverá contactar a equipa de gestão do Departamento de suporte Empresarial.' where code='AcctSensitive-001';
+commit;
