@@ -1,0 +1,147 @@
+PA
+
+
+select * from PAT.UFELOG WHERE contract_id ='943047499' and ACCOUNT_ID = '85833374' order by DATE_COD desc;
+
+select * from PAT.UFELOG WHERE ACCOUNT_ID = '85833332' and USER_LOG = 'wedo.dmarques' ORDER BY DATE_COD DESC;
+
+select * from PAT.UFELOG WHERE ACCOUNT_ID = '85833119' AND contract_id ='943047431' AND user_LOG = 'joseph.manuel' order by DATE_LOG asc;
+
+select * from PAT.UFELOG where INTEGRATION_ID = '6e6dc973-fdad-4d04-a934-752784e67d6c';
+
+select * from PAT.UFELOG WHERE date_cod = '20181024' and USER_LOG = 'wedo.dmarques' ORDER BY 1 DESC;
+
+select * from pat.service where URI like 'http://10.12.3.215%';
+
+select * from pat.service where Name = 'GetOCC';
+
+DESC PAT.PRF_USER;
+
+select * from pat.SERVICE_ATTRIBUTE where SERVICE_ID= (select id from pat.service where name='GetContractOCC');
+
+select * from pat.SERVICE_SERVICE_ATTRIBUTE where SERVICE_ID=(select id from pat.service where name='GetContractOCC');
+
+select * from PAT.PC_PRODUCT where businessid='Cmp002658';
+
+select * from PAT.PC_COMPONENT_GROUP where COMPONENT_GROUP_ID in (
+select groupid from PAT.PC_PRODUCT_GROUP_RELATION where PRODUCT_ID='f7a9a5f1-c9f4-492b-8ff4-7a6ba3b9dc37');
+
+select * from PAT.UFELOG WHERE service='GetContractOCC' and SOAP_OUT like '%Mig. Part. Pós-pago%943046248%'; 
+
+select * from PAT.PRF_USER where NAME like 'Newton%';
+
+SELECT prod.name, serv.* FROM PAT.PC_SERVICE serv,PAT.PC_PRODUCT prod WHERE serv.COMPONENTGROUPBUSINESSID = 'Grp000247' and serv.businessid = 'Cmp002652'
+and prod.id = serv.product_id;
+
+select * from pat.prf_user where SAMACCOUNTNAME= 'wedo.jguedelha';
+
+Insert into pat.prf_user (ID,COMPANY,CREATEDBY,CREATEDON,DEPARTMENT,ENABLED,LASTPASSWORDCHANGEON,MODIFIEDBY,MODIFIEDON,NAME,OBJECTGUID,PASSWORD,ROLE,
+SAMACCOUNTNAME,SUPERVISOR,SCORE,VIP,INTERNAL,LASTAUTHENTICATIONTIMESTAMP,DELETED) values ((select max(id)+1 from pat.prf_user),null,'AD','1533736808000','DSI-DQSSO-Sec. Qualid. Melhoria Contínua','0',null,'AD','1533736808000','José Guedelha',null,null,null,'wedo.jguedelha','CN=Milton Belo,OU=Users,OU=DSI - SQMC,OU=DSI - DQSSO,OU=DSI_OU,OU=UnitelMasterUsersOU,DC=UNINET,DC=UNITEL,DC=CO,DC=AO','5',null,'1',null,'0');
+
+select * from PAT.PC_PRODUCT where name like '%migos%';
+
+select * from PAT.PC_PRODUCT where DESCRIPTION like '%Net ao dia 100%';
+
+select * from PAT.PC_PRODUCT_PRIVILEGE where PRODUCT_ID = 'e27cba0d-6158-4abf-808f-41c9d5922367' and PROFILE_ID = '54';
+
+select * from PAT.PRF_ACCESSLEVELTYPE;
+
+select * from pat.prf_profile where;
+
+SELECT date_cod FROM PAT.UFELOG WHERE SOAP_IN like '%JBO-CMP-AM-0301: The status Inactive is not valid.%';--nao ha operações com este erro no dia 3, apenas nos dias 201/10/2017 e 6/8/2018
+
+SELECT date_cod, soap_out,soap_in, USER_LOG FROM PAT.UFELOG WHERE SOAP_IN like '%JBO-CMP-AM-0301: The status Inactive is not valid.%' and soap_out like  '%943046248%';--os do dia 6/8 foi com o numero de testes feitos pelo carissimo.mundombe
+--432ba7b7-9be9-4476-8950-2179d38256f7 ->part pre-pago para empre pos pago
+--d007adaa-3811-4466-87b7-3a1816cb3f17 ->idem
+--c8f02456-03a9-430f-9757-274118a1bcc2 ->idem
+
+PA
+select * from PAT.UFELOG where
+DATE_COD ='20180820' and SERVICE = 'SubmitOrder' and USER_LOG = 'carissimo.mundombe' and soap_out like '%34058471%'; 
+
+and ACCOUNT_ID ='34058471' order by DATE_LOG DESC;
+--INTEGRATION_ID = 'xxxx'
+--and user_log='CARISSIMO.MUNDOMBE'; and
+--SERVICE='xxx';
+
+select * from pat.service
+where name='GetEquipmentList';
+
+select * from pat.service
+where uri like '%10.12.3.215:7009%';
+/*
+select * from PAT.SERVICE where NAME = 'xxxxx';
+select * from PAT.PC_PRODUCT where DESCRIPTION = 'xxxxx';
+
+select * from PAT.UFELOG;
+select * from PAT.SERVICE;
+select * from PAT.PC_PRODUCT;
+
+select * 
+from PAT.UFELOG u, PAT.SERVICE s, PAT.PC_PRODUCT p
+where u.DATE_COD ='xxx' 
+and u.INTEGRATION_ID = 'xxxx'
+select * from PAT.SERVICE where s.NAME = 'xxxxx';
+select * from PAT.PC_PRODUCT where DESCRIPTION = 'xxxxx'
+
+
+
+AND DATE_COD='20180410'
+and service ='GetExternalSystems';
+
+select * from PAT.UFELOG WHERE INTEGRATION_ID='54713e0a-1d8f-4bc5-aa37-0f7d2b060038';
+
+
+select * from pat.service where name='GetExternalSystems';--http://10.12.3.215:7005/ServiceCatalog/Business
+
+
+select * from PAT.UFELOG where Service like 'GetContractAccountStatusInformation' and DATE_COD like '20161206';
+
+
+
+select * from PAT.SERVICE where NAME = 'xxxxx';
+
+
+
+
+AND INTEGRATION_ID='72ca24c2-26df-4279-8429-92a16e6a9ab9';
+
+BD PAT - VER URI
+SELECT * FROM PAT.SERVICE
+WHERE NAME LIKE '%GetEquipmentList%';
+--WHERE URI LIKE '%http://10.12.3.28:7073/ServiceCatalog/Business%';
+
+SELECT * FROM PAT.UFELOG WHERE 1=1
+and USER_LOG='wedo.dmarques'
+AND DATE_COD='20180323' 
+--and integration_id = 'd8a91ad1-4182-4306-a4c7-ab846f9d2415'
+order by id desc
+;
+
+SELECT * FROM pat.processes where title like 'Informa%';
+
+SELECT * FROM PAT.RFD_SERVICE_OFFERINGS; 
+
+SELECT * FROM PAT.RFD_CHARGING_VALUES; 
+
+
+SELECT * FROM all_tables where owner = 'PAT'
+and table_name like '%DOC%'
+order by table_name desc;
+
+SELECT * FROM PAT.RDF_DOCUMENT;
+
+SELECT * FROM PAT.PRF_PROFILEDOCUMENT;
+*/
+
+SELECT * FROM PAT.RFD_REFDATA WHERE NAME = 'LOV_CONTRACT_MIGRATION';
+
+SELECT * FROM PAT.RFD_RECORD WHERE REF_DATA_ID IN (SELECT ID FROM PAT.RFD_REFDATA WHERE NAME = 'LOV_CONTRACT_MIGRATION');
+
+SELECT * FROM PAT.RFD_VALUES WHERE REF_DATA_REC_ID IN (SELECT ID FROM PAT.RFD_RECORD WHERE REF_DATA_ID IN (SELECT ID FROM PAT.RFD_REFDATA WHERE NAME = 'LOV_CONTRACT_MIGRATION'))
+AND VALUE LIKE '%pré-pago';
+
+
+
+
+
